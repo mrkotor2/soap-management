@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GetBookDetailsRequest xmlns="http://something.com/books"
+                        xsi:schemaLocation = "books-details.xsd"
+                        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<!--    <BookDetails>-->
+        <id>1</id>
+<!--        <name>Spring </name>-->
+<!--        <description>A manual for spring beginners</description>-->
+<!--    </BookDetails>-->
+</GetBookDetailsRequest>

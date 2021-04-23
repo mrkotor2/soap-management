@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://something.com/books"
+           xmlns:tns="http://something.com/books" elementFormDefault="qualified">
+
+    <xs:element name="GetBookDetailsRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="GetBookDetailsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="BookDetails" type="tns:BookDetails"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="GetAllBookDetailsRequest">
+        <xs:complexType>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="GetAllBookDetailsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="BookDetails" type="tns:BookDetails" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="DeleteBookDetailsRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:int"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="DeleteBookDetailsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="status" type="tns:Status"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:simpleType name="Status">
+    <xs:restriction base="xs:string">
+        <xs:enumeration value="SUCCESS"/>
+        <xs:enumeration value="FAILURE"/>
+    </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="BookDetails">
+        <xs:sequence>
+            <xs:element name="id" type="xs:int"/>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="description" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
